@@ -43,3 +43,8 @@ Route::group([
 });
 
 // Route::resource('users', UsersController::class)->middleware('auth:api');
+
+Route::get('/cardssession',[MtgController::class,'cardsSession'])->middleware('auth:api');
+Route::get('/deletesession',[MtgController::class,'deleteSession'])->middleware('auth:api');
+Route::get('/sessions',[MtgController::class,'sessions'])->middleware('auth:api');
+Route::post('/savesession',[MtgController::class,'saveSession'])->middleware('auth:api');

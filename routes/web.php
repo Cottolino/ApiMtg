@@ -25,10 +25,7 @@ Route::get('/cardsgot', function(){
     return CardGot::get();
 });
 
-Route::get('/cardssession',[MtgController::class,'cardsSession']);
-Route::get('/deletesession',[MtgController::class,'deleteSession']);
-Route::get('/sessions',[MtgController::class,'sessions']);
-Route::post('/savesession',[MtgController::class,'saveSession']);
+
 
 
 

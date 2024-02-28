@@ -10,6 +10,8 @@ use App\Models\SearchCard;
 
 use App\Models\CardGot;
 use App\Models\CardSearch;
+use App\Models\CardTradeIn;
+use App\Models\CardTradeOut;
 
 class Session extends Model
 {
@@ -30,5 +32,12 @@ class Session extends Model
     {
         return $this->hasMany(CardSearch::class);
     }
-
+    public function CardTradeIn()
+    {
+        return $this->hasMany(CardTradeIn::class);
+    }
+    public function CardTradeOut()
+    {
+        return $this->hasMany(CardTradeOut::class);
+    }
 }

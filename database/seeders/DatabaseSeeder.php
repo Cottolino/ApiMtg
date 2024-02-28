@@ -12,6 +12,8 @@ use App\Models\SearchCard;
 
 use App\Models\CardGot;
 use App\Models\CardSearch;
+use App\Models\CardTradeIn;
+use App\Models\CardTradeOut;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,7 +29,10 @@ class DatabaseSeeder extends Seeder
         // SearchCard::truncate();
         CardGot::truncate();
         CardSearch::truncate();
+        CardTradeIn::truncate();
+        CardTradeOut::truncate();
         Session::truncate();
+        
 
         User::factory(3)->create();
 
@@ -37,11 +42,11 @@ class DatabaseSeeder extends Seeder
         //     SearchCard::factory(10)
         // )->create();
 
-        \App\Models\Session::factory(5)->has(
-            CardGot::factory(10)
-        )->has(
-            CardSearch::factory(10)
-        )->create();
+        // \App\Models\Session::factory(5)->has(
+        //     CardGot::factory(10)
+        // )->has(
+        //     CardSearch::factory(10)
+        // )->create();
         
         // \App\Models\GotCard::factory(30)->create();
 
