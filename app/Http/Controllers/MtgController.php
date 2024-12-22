@@ -125,6 +125,43 @@ class MtgController extends Controller
         return $res;
 
     }
+    public function saveDeck(Request $request)
+    {
+        $res = [
+            'result' => 0,
+            'error' => 0,
+            'message' => 'Creato!'
+          ];
+
+        $deck = $request->input('nameDeck');
+
+        $res['nameDeck'] = $deck;
+
+        // if(DB::table('decks')->where('name',$deck)->exists())
+        // {
+        //     $res['message'] = 'Deck già esistente!Cambia nome per preseguire!';
+        //     $res['error']++;
+        // }
+        // else
+        // {
+        //     // dd($request->all());
+        //     DB::table('decks')->insert(['name' => $deck]);
+
+        //     $row = DB::table('decks')->where('name',$deck)->first();
+        //     $deck_id = $row->id;
+
+        //     $cardsdeck = $request->input('cardsDeck');
+
+        //     foreach($cardsdeck as $item)
+        //     {
+        //         $item['deck_id'] = $deck_id;
+        //         $item['created_at'] = \Carbon\Carbon::now();
+        //         DB::table('cardsdeck')->insert($item);
+        //         $res['result']++;
+        //     }
+        // }
+        return $res;
+    }
     
     public function sessions()
     {

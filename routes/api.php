@@ -49,3 +49,4 @@ Route::get('/cardssession',[MtgController::class,'cardsSession'])->middleware('a
 Route::get('/deletesession',[MtgController::class,'deleteSession'])->middleware('auth:api');
 Route::get('/sessions',[MtgController::class,'sessions'])->middleware('auth:api');
 Route::post('/savesession',[MtgController::class,'saveSession'])->middleware('auth:api');
+Route::post('/savedeck',[MtgController::class,'saveDeck'])->middleware('auth:api');

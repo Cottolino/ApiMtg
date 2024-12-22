@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
 
 use App\Models\User;
@@ -105,6 +106,7 @@ class AuthController extends Controller
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
+            // 'expires_in' => Carbon::now()->addSeconds(20)->timestamp,
             'user_name' => auth()->user()->name,
             'email' => auth()->user()->email
         ]);
